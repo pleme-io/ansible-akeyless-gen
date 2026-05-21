@@ -39,7 +39,7 @@ jobs:
         # ansible_collections/<namespace>/<name>/.
         uses: actions/checkout@v4
         with:
-          path: ansible_collections/akeyless/akeyless
+          path: ansible_collections/drzln0/akeyless
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -52,7 +52,7 @@ jobs:
           pip install 'ansible-core>=2.14' antsibull-docs sphinx sphinx-ansible-theme
 
       - name: Build collection documentation
-        working-directory: ansible_collections/akeyless/akeyless
+        working-directory: ansible_collections/drzln0/akeyless
         env:
           ANSIBLE_COLLECTIONS_PATH: ${{ github.workspace }}
         run: |
@@ -63,7 +63,7 @@ jobs:
             --use-current \
             --dest-dir build/docs \
             --collection-version "${version}" \
-            akeyless.akeyless
+            drzln0.akeyless
           cd build/docs
           pip install -r requirements.txt
           ./build.sh
@@ -71,7 +71,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ansible_collections/akeyless/akeyless/build/docs/build/html
+          path: ansible_collections/drzln0/akeyless/build/docs/build/html
 
   deploy:
     name: deploy to GitHub Pages
