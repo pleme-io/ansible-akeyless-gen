@@ -1,30 +1,8 @@
-# ansible-akeyless-gen
+# ansible-akeyless
 
-Auto-generated Ansible artifacts for the Akeyless provider.
+Auto-generated Ansible collection wrapping the Akeyless Python SDK.
+Each module proxies one Akeyless V2 API endpoint with create/read/update/delete
+semantics derived from the upstream OpenAPI specification.
+Do not edit generated modules — they will be overwritten.
 
-**Do not edit manually.** This repo is populated by the [iac-forge](https://github.com/pleme-io/iac-forge) code generation pipeline from [TOML resource specifications](https://github.com/pleme-io/akeyless-terraform-resources).
-
-## Contents
-
-Python modules packaged as a Nix derivation.
-
-## Verification
-
-Artifacts are validated by [iac-verify](https://github.com/pleme-io/akeyless-terraform-resources/tree/main/tools/iac-verify) via the aggregate repo's `nix flake check`.
-
-```bash
-iac-verify ansible .
-```
-
-## Pipeline
-
-```
-OpenAPI spec change -> tend detects -> iac-forge sync -> pushes here
-  -> GitHub Actions updates aggregate flake.lock
-    -> kenshi runs nix build .#verify-all
-      -> Discord notification
-```
-
-## License
-
-[MIT](LICENSE)
+Regenerate with: `iac-forge-cli generate --backend ansible`.
