@@ -1,6 +1,6 @@
 # OpenAPI coverage matrix
 
-Generated: `2026-05-21T17:01:37Z`
+Generated: `2026-05-21T17:05:53Z`
 
 Source spec: `/home/drzzln/code/github/pleme-io/akeyless-go/api/openapi.yaml`
 
