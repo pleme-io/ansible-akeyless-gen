@@ -37,7 +37,7 @@ jobs:
       - name: Checkout into the collection layout
         # antsibull-docs requires the collection to be on disk at
         # ansible_collections/<namespace>/<name>/.
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           path: ansible_collections/drzln0/akeyless
 
